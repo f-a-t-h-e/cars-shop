@@ -1,0 +1,29 @@
+@tailwind base;
+::-webkit-scrollbar {
+  background-color: #5a5a5a33;
+}
+::-webkit-scrollbar-corner {
+  background-color: #5a5a5a33;
+}
+::-webkit-scrollbar-thumb {
+  background-color: black;
+  border: 1px solid gold;
+}
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply /*[--scroll-mt:9.875rem]*/ scroll-smooth;
+}
+
+@layer components {
+  .navButton {
+    @apply border-x px-6 py-2 border-[#322a00] uppercase text-sm tracking-widest
+     text-gray-500 transition-all hover:border-[#322a00] hover:text-white hover:bg-[#322a00];
+  }
+  .contact-input {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b
+    px-6 py-4 border-b-transparent text-gray-500 placeholder-gray-500 transition-all 
+    focus:text-[#F7ABBA]/40 focus:border-[#F7ABBA]/40 hover:border-[#F7ABBA]/40;
+  }
+}
