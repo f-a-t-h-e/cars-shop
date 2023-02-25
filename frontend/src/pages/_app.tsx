@@ -1,7 +1,19 @@
 import type { AppProps } from "next/app";
 // import Head from "next/head";
 import GlobalStyles from "@/styles/GlobalStyles";
+import AbortController from "abort-controller";
+import fetch, { Headers, Request, Response } from "node-fetch";
+
+import { wrapper } from "../store";
 import "tailwindcss/tailwind.css";
+
+Object.assign(globalThis, {
+  fetch,
+  Headers,
+  Request,
+  Response,
+  AbortController,
+});
 
 const _App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -18,4 +30,4 @@ const _App = ({ Component, pageProps }: AppProps) => {
   );
 };
 
-export default _App;
+export default wrapper.withRedux(_App);
